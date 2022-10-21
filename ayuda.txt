@@ -1,0 +1,27 @@
+-- instalamos el paquete de santum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+./vendor/bin/sail php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+php artisan migrate
+./vendor/bin/sail php artisan migrate
+
+-- m: migracion c: controlador r:resource
+php artisan make:model Product -mcr
+./vendor/bin/sail php artisan make:model Product -mcr
+
+-- creamos controlador Auth
+php artisan make:controller AuthController
+./vendor/bin/sail php artisan make:controller AuthController
+
+-- Creamos un seeder
+php artisan make:seeder ProductSeeder
+./vendor/bin/sail php artisan make:seeder ProductSeeder
+
+-- insertamos los seeder a la BD
+php artisan db:seed
+./vendor/bin/sail php artisan db:seed
+
+-- iniciamos server
+php artisan serve
+
+
